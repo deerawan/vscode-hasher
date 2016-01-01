@@ -11,7 +11,7 @@
     "Other"
   ],
   "activationEvents": [
-    "onCommand:extension.sayHello"
+    "onCommand:extension.md5"
   ],
   "main": "./out/src/extension",
   "contributes": {
