@@ -1,23 +1,15 @@
 
 import {window, workspace, commands, ExtensionContext, Range, TextEditor, Selection} from 'vscode';
-// import {Md5Command} from 'md5';
+import {Md5Command} from './md5';
 
 export function activate(context: ExtensionContext) {
 
-	var disposable = commands.registerCommand('extension.md5', () => {
-		// let md5 = new Md5Command();
+	context.subscriptions.push(commands.registerCommand('extension.md5', () => {
         var editor = getActiveEditor();
         var selected = getSelectedTextAndRange(editor);
-        // var jigong = md5.run('message');
-        editor.edit(function(editBuilder) {
-            editBuilder.replace(selected.range, 'woi');
-        });
-
-		// Display a message box to the user
-		// window.showInformationMessage('Hello World!');
-	});
-
-	context.subscriptions.push(disposable);
+        let md5 = new Md5Command();
+        replaceText(editor, selected.range, md5.run(selected.text));
+	}));
 }
 
 // this method is called when your extension is deactivated
@@ -58,4 +50,10 @@ function getSelectedTextAndRange(editor: TextEditor) {
 
 function hasSelectedText(selection: Selection) {
     return selection.start.character !== selection.end.character;
+}
+
+function replaceText(editor, range, newText) {
+    editor.edit(function(editBuilder) {
+        editBuilder.replace(range, newText);
+    });
 }

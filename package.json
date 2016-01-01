@@ -11,18 +11,19 @@
     "Other"
   ],
   "activationEvents": [
-    "onCommand:extension.md5"
+    "onCommand:extension.md5",
+    "onCommand:extension.sha1"
   ],
   "main": "./out/src/extension",
   "contributes": {
     "commands": [
       {
-        "command": "extension.sayHello",
-        "title": "Hello World"
-      },
-      {
         "command": "extension.md5",
         "title": "Hasher:MD5"
+      },
+      {
+        "command": "extension.sha1",
+        "title": "Hasher:SHA1"
       }
     ]
   },
