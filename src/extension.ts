@@ -1,14 +1,21 @@
 
 import {window, workspace, commands, ExtensionContext, Range, TextEditor, Selection} from 'vscode';
-import {Md5Command} from './md5';
+import {Md5Command} from './md5-command';
+import {Sha1Command} from './sha1-command';
 
 export function activate(context: ExtensionContext) {
 
+    var editor = getActiveEditor();
+    var selected = getSelectedTextAndRange(editor);
+
 	context.subscriptions.push(commands.registerCommand('extension.md5', () => {
-        var editor = getActiveEditor();
-        var selected = getSelectedTextAndRange(editor);
         let md5 = new Md5Command();
         replaceText(editor, selected.range, md5.run(selected.text));
+	}));
+
+    context.subscriptions.push(commands.registerCommand('extension.sha1', () => {
+        let sha1 = new Sha1Command();
+        replaceText(editor, selected.range, sha1.run(selected.text));
 	}));
 }
 
