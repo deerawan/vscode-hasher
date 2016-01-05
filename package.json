@@ -12,7 +12,8 @@
   ],
   "activationEvents": [
     "onCommand:extension.md5",
-    "onCommand:extension.sha1"
+    "onCommand:extension.sha1",
+    "onCommand:extension.base64Encode"
   ],
   "main": "./out/src/extension",
   "contributes": {
@@ -24,14 +25,21 @@
       {
         "command": "extension.sha1",
         "title": "Hasher:SHA1"
+      },
+      {
+        "command": "extension.base64Encode",
+        "title": "Hasher:Base64 Encode"
       }
     ]
   },
   "scripts": {
     "vscode:prepublish": "node ./node_modules/vscode/bin/compile",
-    "compile": "node ./node_modules/vscode/bin/compile -watch -p ./"
+    "compile": "node ./node_modules/vscode/bin/compile -watch -p ./",
+    "test": "./node_modules/istanbul/lib/cli.js cover ./node_modules/mocha/bin/_mocha -- -R spec --ui tdd ./out/test/*.test.js"
   },
   "devDependencies": {
+    "coveralls": "^2.11.6",
+    "istanbul": "^0.4.1",
     "typescript": "^1.6.2",
     "vscode": "0.10.x"
   },
