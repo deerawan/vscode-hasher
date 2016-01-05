@@ -2,6 +2,7 @@
 import {window, workspace, commands, ExtensionContext, Range, TextEditor, Selection} from 'vscode';
 import {Md5Command} from './md5-command';
 import {Sha1Command} from './sha1-command';
+import {Base64EncodeCommand} from './base64-encode-command';
 
 export function activate(context: ExtensionContext) {
 
@@ -16,6 +17,11 @@ export function activate(context: ExtensionContext) {
     context.subscriptions.push(commands.registerCommand('extension.sha1', () => {
         let sha1 = new Sha1Command();
         replaceText(editor, selected.range, sha1.run(selected.text));
+	}));
+
+    context.subscriptions.push(commands.registerCommand('extension.base64Encode', () => {
+        let base64Encode = new Base64EncodeCommand();
+        replaceText(editor, selected.range, base64Encode.run(selected.text));
 	}));
 }
 
