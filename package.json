@@ -14,7 +14,8 @@
     "onCommand:extension.md5",
     "onCommand:extension.sha1",
     "onCommand:extension.base64Encode",
-    "onCommand:extension.base64Decode"
+    "onCommand:extension.base64Decode",
+    "onCommand:extension.uriEncode"
   ],
   "main": "./out/src/extension",
   "contributes": {
@@ -34,6 +35,10 @@
       {
         "command": "extension.base64Decode",
         "title": "Hasher:Base64 Decode"
+      },
+      {
+        "command": "extension.uriEncode",
+        "title": "Hasher:URI Encode"
       }
     ]
   },
@@ -50,7 +55,6 @@
   },
   "dependencies": {
     "md5": "^2.0.0",
-    "sha1": "^1.1.1",
-    "urlencode": "^1.1.0"
+    "sha1": "^1.1.1"
   }
 }
