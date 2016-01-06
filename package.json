@@ -13,7 +13,8 @@
   "activationEvents": [
     "onCommand:extension.md5",
     "onCommand:extension.sha1",
-    "onCommand:extension.base64Encode"
+    "onCommand:extension.base64Encode",
+    "onCommand:extension.base64Decode"
   ],
   "main": "./out/src/extension",
   "contributes": {
@@ -29,6 +30,10 @@
       {
         "command": "extension.base64Encode",
         "title": "Hasher:Base64 Encode"
+      },
+      {
+        "command": "extension.base64Decode",
+        "title": "Hasher:Base64 Decode"
       }
     ]
   },

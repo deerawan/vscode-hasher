@@ -7,25 +7,30 @@ import {Base64DecodeCommand} from './base64-decode-command';
 
 export function activate(context: ExtensionContext) {
 
-    var editor = getActiveEditor();
-    var selected = getSelectedTextAndRange(editor);
-
 	context.subscriptions.push(commands.registerCommand('extension.md5', () => {
+        var editor = getActiveEditor();
+        var selected = getSelectedTextAndRange(editor);
         let md5 = new Md5Command();
         replaceText(editor, selected.range, md5.run(selected.text));
 	}));
 
     context.subscriptions.push(commands.registerCommand('extension.sha1', () => {
+        var editor = getActiveEditor();
+        var selected = getSelectedTextAndRange(editor);
         let sha1 = new Sha1Command();
         replaceText(editor, selected.range, sha1.run(selected.text));
 	}));
 
     context.subscriptions.push(commands.registerCommand('extension.base64Encode', () => {
+        var editor = getActiveEditor();
+        var selected = getSelectedTextAndRange(editor);
         let base64Encode = new Base64EncodeCommand();
         replaceText(editor, selected.range, base64Encode.run(selected.text));
 	}));
 
     context.subscriptions.push(commands.registerCommand('extension.base64Decode', () => {
+        var editor = getActiveEditor();
+        var selected = getSelectedTextAndRange(editor);
         let base64Decode = new Base64DecodeCommand();
         replaceText(editor, selected.range, base64Decode.run(selected.text));
 	}));
