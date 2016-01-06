@@ -3,6 +3,7 @@ import {window, workspace, commands, ExtensionContext, Range, TextEditor, Select
 import {Md5Command} from './md5-command';
 import {Sha1Command} from './sha1-command';
 import {Base64EncodeCommand} from './base64-encode-command';
+import {Base64DecodeCommand} from './base64-decode-command';
 
 export function activate(context: ExtensionContext) {
 
@@ -22,6 +23,11 @@ export function activate(context: ExtensionContext) {
     context.subscriptions.push(commands.registerCommand('extension.base64Encode', () => {
         let base64Encode = new Base64EncodeCommand();
         replaceText(editor, selected.range, base64Encode.run(selected.text));
+	}));
+
+    context.subscriptions.push(commands.registerCommand('extension.base64Decode', () => {
+        let base64Decode = new Base64DecodeCommand();
+        replaceText(editor, selected.range, base64Decode.run(selected.text));
 	}));
 }
 
