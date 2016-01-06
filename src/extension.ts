@@ -62,6 +62,11 @@ function getActiveEditor(): TextEditor {
     return editor;
 }
 
+/**
+ * Get selected text and range
+ *
+ * @param {TextEditor} editor
+ */
 function getSelectedTextAndRange(editor: TextEditor) {
     var selection = editor.selection;
     var range;
@@ -80,10 +85,23 @@ function getSelectedTextAndRange(editor: TextEditor) {
     }
 }
 
+/**
+ * Check if selection has selected text or just a cursor
+ *
+ * @param {Selection} selection
+ * @return {boolean} true if not a cursor
+ */
 function hasSelectedText(selection: Selection) {
     return selection.start.character !== selection.end.character;
 }
 
+/**
+ * Replace text in editor
+ *
+ * @param {TextEditor} editor
+ * @param {Range} range
+ * @param {string} newText - new text to replace
+ */
 function replaceText(editor, range, newText) {
     editor.edit(function(editBuilder) {
         editBuilder.replace(range, newText);
