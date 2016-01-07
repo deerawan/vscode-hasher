@@ -5,6 +5,7 @@ import {Sha1Command} from './sha1-command';
 import {Base64EncodeCommand} from './base64-encode-command';
 import {Base64DecodeCommand} from './base64-decode-command';
 import {UriEncodeComponentCommand} from './uri-encode-component-command';
+import {UriDecodeComponentCommand} from './uri-decode-component-command';
 
 export function activate(context: ExtensionContext) {
 
@@ -41,6 +42,13 @@ export function activate(context: ExtensionContext) {
         var selected = getSelectedTextAndRange(editor);
         let uriEncodeComponent = new UriEncodeComponentCommand();
         replaceText(editor, selected.range, uriEncodeComponent.run(selected.text));
+	}));
+
+    context.subscriptions.push(commands.registerCommand('extension.uriDecodeComponent', () => {
+        var editor = getActiveEditor();
+        var selected = getSelectedTextAndRange(editor);
+        let uriDecodeComponent = new UriDecodeComponentCommand();
+        replaceText(editor, selected.range, uriDecodeComponent.run(selected.text));
 	}));
 }
 

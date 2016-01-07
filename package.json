@@ -15,7 +15,8 @@
     "onCommand:extension.sha1",
     "onCommand:extension.base64Encode",
     "onCommand:extension.base64Decode",
-    "onCommand:extension.uriEncodeComponent"
+    "onCommand:extension.uriEncodeComponent",
+    "onCommand:extension.uriDecodeComponent"
   ],
   "main": "./out/src/extension",
   "contributes": {
@@ -39,6 +40,10 @@
       {
         "command": "extension.uriEncodeComponent",
         "title": "Hasher:URI Encode Component"
+      },
+      {
+        "command": "extension.uriDecodeComponent",
+        "title": "Hasher:URI Decode Component"
       }
     ]
   },
