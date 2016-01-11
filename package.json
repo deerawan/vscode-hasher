@@ -1,11 +1,25 @@
 {
   "name": "vscode-hasher",
   "displayName": "vscode-hasher",
-  "description": "Generate hash",
-  "version": "0.0.1",
+  "description": "Generate various hash (md5, sha1), HTML entity conversion and many more",
+  "version": "1.0.0",
   "publisher": "deerawan",
+  "icon": "images/hasher.png",
+  "galleryBanner": {
+    "color": "#7171AD",
+    "theme": "dark"
+  },
   "engines": {
     "vscode": "^0.10.1"
+  },
+  "bugs": {
+    "url": "https://github.com/deerawan/vscode-hasher/issues",
+    "email": "deerawan@gmail.com"
+  },
+  "homepage": "https://github.com/deerawan/vscode-hasher",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/deerawan/vscode-hasher"
   },
   "categories": [
     "Other"
