@@ -6,7 +6,7 @@
   "publisher": "deerawan",
   "icon": "images/hasher.png",
   "galleryBanner": {
-    "color": "#7171AD",
+    "color": "#283593",
     "theme": "dark"
   },
   "engines": {
@@ -79,6 +79,7 @@
   "devDependencies": {
     "coveralls": "^2.11.6",
     "istanbul": "^0.4.1",
+    "mocha": "^2.3.4",
     "typescript": "^1.6.2",
     "vscode": "0.10.x"
   },
