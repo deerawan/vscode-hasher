@@ -1,8 +1,8 @@
 import {ICommand} from './command';
-import md5 = require('md5');
+import * as crypto from 'crypto';
 
 export class Md5Command implements ICommand {
     run(text: string): string {
-        return md5(text);
+        return crypto.createHash('md5').update(text).digest('hex');
     }
 }
