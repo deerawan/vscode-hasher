@@ -1,8 +1,8 @@
 {
   "name": "vscode-hasher",
-  "displayName": "vscode-hasher",
+  "displayName": "Hasher",
   "description": "Generate various hash (md5, sha1), HTML entity conversion and many more",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "publisher": "deerawan",
   "icon": "images/hasher.png",
   "galleryBanner": {
