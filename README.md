@@ -1,13 +1,22 @@
-# README
-## This is the README for your extension "vscode-hasher" 
-You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
+# Visual Studio Code Hasher
+Generate various hash (md5, sha1), HTML entity conversion and many more. Features:
+- Generate MD5
+- Generate SHA1
+- Base64 Encode
+- Base64 Decode
+- URI Encode Component
+- URI Decode Component
+- HTML Entity Encode
+- HTML Entity Decode
 
-* Split the editor (`Cmd+\` on OSX or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+CMD+V` on OSX or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux) or `Cmd+Space` (OSX) to see a list of Markdown snippets
+## Installation
+Type `cmd-shift-p` to launch command palette and choose `Extensions: Install Extension`. Search "Hasher" and install.
 
-### For more information
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
+## Usage
+Type `cmd-shift-p` to launch command palette, type "Hasher" then pick the hasher command you want to use. 
 
-** Enjoy!**
+## Credit
+This project is inspired by [Hasher Sublime Package](https://packagecontrol.io/packages/Hasher)
+
+## License
+MIT
