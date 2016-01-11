@@ -39,35 +39,35 @@
     "commands": [
       {
         "command": "extension.md5",
-        "title": "Hasher:MD5"
+        "title": "Hasher: MD5"
       },
       {
         "command": "extension.sha1",
-        "title": "Hasher:SHA1"
+        "title": "Hasher: SHA1"
       },
       {
         "command": "extension.base64Encode",
-        "title": "Hasher:Base64 Encode"
+        "title": "Hasher: Base64 Encode"
       },
       {
         "command": "extension.base64Decode",
-        "title": "Hasher:Base64 Decode"
+        "title": "Hasher: Base64 Decode"
       },
       {
         "command": "extension.uriEncodeComponent",
-        "title": "Hasher:URI Encode Component"
+        "title": "Hasher: URI Encode Component"
       },
       {
         "command": "extension.uriDecodeComponent",
-        "title": "Hasher:URI Decode Component"
+        "title": "Hasher: URI Decode Component"
       },
       {
         "command": "extension.htmlEntityEncodeComponent",
-        "title": "Hasher:HTML Entity Encode"
+        "title": "Hasher: HTML Entity Encode"
       },
       {
         "command": "extension.htmlEntityDecodeComponent",
-        "title": "Hasher:HTML Entity Decode"
+        "title": "Hasher: HTML Entity Decode"
       }
     ]
   },
