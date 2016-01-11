@@ -10,10 +10,10 @@ Generate various hash (md5, sha1), HTML entity conversion and many more. Feature
 - HTML Entity Decode
 
 ## Installation
-Type `cmd-shift-p` to launch command palette and choose `Extensions: Install Extension`. Search "Hasher" and install.
+Type `cmd-shift-p` to launch command palette and choose `Extensions: Install Extension`. Search **hasher** and install.
 
 ## Usage
-Type `cmd-shift-p` to launch command palette, type "Hasher" then pick the hasher command you want to use. 
+Type `cmd-shift-p` to launch command palette, type **hasher** then pick the hasher command you want to use.
 
 ## Credit
 This project is inspired by [Hasher Sublime Package](https://packagecontrol.io/packages/Hasher)
