@@ -31,7 +31,8 @@
     "onCommand:extension.base64Decode",
     "onCommand:extension.uriEncodeComponent",
     "onCommand:extension.uriDecodeComponent",
-    "onCommand:extension.htmlEntityEncodeComponent"
+    "onCommand:extension.htmlEntityEncodeComponent",
+    "onCommand:extension.htmlEntityDecodeComponent"
   ],
   "main": "./out/src/extension",
   "contributes": {
@@ -63,6 +64,10 @@
       {
         "command": "extension.htmlEntityEncodeComponent",
         "title": "Hasher:HTML Entity Encode"
+      },
+      {
+        "command": "extension.htmlEntityDecodeComponent",
+        "title": "Hasher:HTML Entity Decode"
       }
     ]
   },

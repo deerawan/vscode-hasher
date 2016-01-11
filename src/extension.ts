@@ -7,6 +7,7 @@ import {Base64DecodeCommand} from './base64-decode-command';
 import {UriEncodeComponentCommand} from './uri-encode-component-command';
 import {UriDecodeComponentCommand} from './uri-decode-component-command';
 import {HtmlEntityEncodeCommand} from './html-entity-encode-command';
+import {HtmlEntityDecodeCommand} from './html-entity-decode-command';
 
 export function activate(context: ExtensionContext) {
 
@@ -57,6 +58,13 @@ export function activate(context: ExtensionContext) {
         var selected = getSelectedTextAndRange(editor);
         let htmlEntityEncodeComponent = new HtmlEntityEncodeCommand();
         replaceText(editor, selected.range, htmlEntityEncodeComponent.run(selected.text));
+	}));
+
+    context.subscriptions.push(commands.registerCommand('extension.htmlEntityDecodeComponent', () => {
+        var editor = getActiveEditor();
+        var selected = getSelectedTextAndRange(editor);
+        let htmlEntityDecodeComponent = new HtmlEntityDecodeCommand();
+        replaceText(editor, selected.range, htmlEntityDecodeComponent.run(selected.text));
 	}));
 }
 
