@@ -31,6 +31,7 @@
     "onCommand:extension.base64Decode",
     "onCommand:extension.uriEncodeComponent",
     "onCommand:extension.uriDecodeComponent",
+    "onCommand:extension.uuidV4",
     "onCommand:extension.htmlEntityEncodeComponent",
     "onCommand:extension.htmlEntityDecodeComponent"
   ],
@@ -62,6 +63,10 @@
         "title": "Hasher: URI Decode Component"
       },
       {
+        "command": "extension.uuidV4",
+        "title": "Hasher: UUID v4"
+      },
+      {
         "command": "extension.htmlEntityEncodeComponent",
         "title": "Hasher: HTML Entity Encode"
       },
@@ -81,9 +86,11 @@
     "istanbul": "^0.4.1",
     "mocha": "^2.3.4",
     "typescript": "^1.6.2",
+    "uuid-validate": "0.0.2",
     "vscode": "0.10.x"
   },
   "dependencies": {
-    "he": "^0.5.0"
+    "he": "^0.5.0",
+    "uuid": "^3.0.1"
   }
 }
