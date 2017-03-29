@@ -58,15 +58,15 @@ export function activate(context: ExtensionContext) {
     context.subscriptions.push(commands.registerCommand('extension.uuidV1', () => {
         var editor = getActiveEditor();
         var selected = getSelectedTextAndRange(editor);
-        let uriDecodeComponent = new UuidV1Command();
-        replaceText(editor, selected.range, uriDecodeComponent.run());
+        let uuidV1Command = new UuidV1Command();
+        insertText(editor, uuidV1Command.run());
     }));
 
     context.subscriptions.push(commands.registerCommand('extension.uuidV4', () => {
         var editor = getActiveEditor();
         var selected = getSelectedTextAndRange(editor);
-        let uriDecodeComponent = new UuidV4Command();
-        replaceText(editor, selected.range, uriDecodeComponent.run());
+        let uuidV4Command = new UuidV4Command();
+        insertText(editor, uuidV4Command.run());
     }));
 
     context.subscriptions.push(commands.registerCommand('extension.htmlEntityEncodeComponent', () => {
@@ -142,8 +142,19 @@ function hasSelectedText(selection: Selection) {
  * @param {Range} range
  * @param {string} newText - new text to replace
  */
-function replaceText(editor, range, newText) {
+function replaceText(editor: TextEditor, range, newText: string) {
     editor.edit(function(editBuilder) {
         editBuilder.replace(range, newText);
     });
+}
+
+/**
+ * Insert text in editor
+ */
+function insertText(editor: TextEditor, text: string) {
+  const position = editor.selection.active;
+
+  editor.edit(function(editBuilder) {
+    editBuilder.insert(position, text);
+  });
 }
