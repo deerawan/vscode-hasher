@@ -6,6 +6,7 @@ import {Base64EncodeCommand} from './base64-encode-command';
 import {Base64DecodeCommand} from './base64-decode-command';
 import {UriEncodeComponentCommand} from './uri-encode-component-command';
 import {UriDecodeComponentCommand} from './uri-decode-component-command';
+import {UuidV1Command} from './uuid-v1-command';
 import {UuidV4Command} from './uuid-v4-command';
 import {HtmlEntityEncodeCommand} from './html-entity-encode-command';
 import {HtmlEntityDecodeCommand} from './html-entity-decode-command';
@@ -52,6 +53,13 @@ export function activate(context: ExtensionContext) {
         var selected = getSelectedTextAndRange(editor);
         let uriDecodeComponent = new UriDecodeComponentCommand();
         replaceText(editor, selected.range, uriDecodeComponent.run(selected.text));
+    }));
+
+    context.subscriptions.push(commands.registerCommand('extension.uuidV1', () => {
+        var editor = getActiveEditor();
+        var selected = getSelectedTextAndRange(editor);
+        let uriDecodeComponent = new UuidV1Command();
+        replaceText(editor, selected.range, uriDecodeComponent.run());
     }));
 
     context.subscriptions.push(commands.registerCommand('extension.uuidV4', () => {
