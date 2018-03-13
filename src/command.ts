@@ -1,3 +1,3 @@
 export interface ICommand {
-    run(text?: string): string;
+  run(text?: string): string;
 }

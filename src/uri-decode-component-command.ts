@@ -1,7 +1,7 @@
-import {ICommand} from './command';
+import { ICommand } from './command';
 
 export class UriDecodeComponentCommand implements ICommand {
-    run(text: string): string {
-        return decodeURIComponent(text);
-    }
+  run(text: string): string {
+    return decodeURIComponent(text);
+  }
 }
