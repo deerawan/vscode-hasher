@@ -1,7 +1,8 @@
 {
   "name": "vscode-hasher",
   "displayName": "Hasher",
-  "description": "Generate various hash (md5, sha1), HTML entity conversion and many more",
+  "description":
+    "Generate various hash (md5, sha1), HTML entity conversion and many more",
   "version": "1.0.1",
   "publisher": "deerawan",
   "icon": "images/hasher.png",
@@ -21,9 +22,7 @@
     "type": "git",
     "url": "https://github.com/deerawan/vscode-hasher"
   },
-  "categories": [
-    "Other"
-  ],
+  "categories": ["Other"],
   "activationEvents": [
     "onCommand:extension.md5",
     "onCommand:extension.sha1",
@@ -84,18 +83,31 @@
   "scripts": {
     "vscode:prepublish": "node ./node_modules/vscode/bin/compile",
     "compile": "node ./node_modules/vscode/bin/compile -watch -p ./",
-    "test": "./node_modules/istanbul/lib/cli.js cover ./node_modules/mocha/bin/_mocha -- -R spec --ui tdd ./out/test/*.test.js"
+    "test":
+      "./node_modules/istanbul/lib/cli.js cover ./node_modules/mocha/bin/_mocha -- -R spec --ui tdd ./out/test/*.test.js",
+    "precommit": "lint-staged",
+    "format": "prettier --write \"{src,test}/**/*.ts\"",
+    "lint": "tslint -c tslint.json 'src/**/*.ts' 'test/**/*.ts' --fix"
   },
   "devDependencies": {
     "coveralls": "^2.11.6",
+    "husky": "^0.14.3",
     "istanbul": "^0.4.1",
+    "lint-staged": "^7.0.0",
     "mocha": "^2.3.4",
-    "typescript": "^1.6.2",
+    "prettier": "^1.11.1",
+    "tslint": "^5.9.1",
+    "tslint-config-prettier": "^1.10.0",
+    "typescript": "^2.5.3",
     "uuid-validate": "0.0.2",
     "vscode": "0.10.x"
   },
   "dependencies": {
     "he": "^0.5.0",
     "uuid": "^3.0.1"
+  },
+  "lint-staged": {
+    "*.{ts,json}": ["prettier --write", "git add"],
+    "*.ts": ["tslint --fix", "tslint"]
   }
 }
